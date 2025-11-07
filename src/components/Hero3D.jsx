@@ -8,9 +8,9 @@ export default function Hero3D() {
         <div className="absolute -inset-[40%] bg-[radial-gradient(circle_at_30%_20%,rgba(124,58,237,0.35),transparent_50%),_radial-gradient(circle_at_70%_60%,rgba(59,130,246,0.25),transparent_45%)] blur-2xl" />
       </div>
 
-      {/* Spline Canvas */}
+      {/* Spline Canvas with DNA animation */}
       <div className="relative h-[70vh] sm:h-[80vh] w-full">
-        <Spline scene="https://prod.spline.design/wwTRdG1D9CkNs368/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+        <Spline scene="https://prod.spline.design/mWY-FNsBVpRvZHS5/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
       {/* Content Overlay */}

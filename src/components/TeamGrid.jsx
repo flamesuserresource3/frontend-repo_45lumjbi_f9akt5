@@ -1,27 +1,31 @@
 import { useState } from 'react';
 
 const sampleTeam = [
-  { name: 'Dr. A. Pratama', role: 'Ketua Prodi', type: 'dosen' },
-  { name: 'Dr. B. Wibowo', role: 'Dosen Tetap', type: 'dosen' },
-  { name: 'C. Lestari, M.Sc', role: 'Dosen', type: 'dosen' },
-  { name: 'D. Siregar, M.Kom', role: 'Dosen', type: 'dosen' },
-  { name: 'E. Putri', role: 'Staf Akademik', type: 'staf' },
-  { name: 'F. Ramadhan', role: 'Staf Administrasi', type: 'staf' },
-  { name: 'G. Nugraha', role: 'Laboran', type: 'staf' },
-  { name: 'H. Santoso', role: 'Dosen', type: 'dosen' },
+  { name: 'Dr. A. Pratama', role: 'Ketua Prodi', type: 'dosen', photo: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=800&auto=format&fit=crop' },
+  { name: 'Dr. B. Wibowo', role: 'Dosen Tetap', type: 'dosen', photo: 'https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=800&auto=format&fit=crop' },
+  { name: 'C. Lestari, M.Sc', role: 'Dosen', type: 'dosen', photo: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop' },
+  { name: 'D. Siregar, M.Kom', role: 'Dosen', type: 'dosen', photo: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=800&auto=format&fit=crop' },
+  { name: 'E. Putri', role: 'Staf Akademik', type: 'staf', photo: 'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=800&auto=format&fit=crop' },
+  { name: 'F. Ramadhan', role: 'Staf Administrasi', type: 'staf', photo: 'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=800&auto=format&fit=crop' },
+  { name: 'G. Nugraha', role: 'Laboran', type: 'staf', photo: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=800&auto=format&fit=crop' },
+  { name: 'H. Santoso', role: 'Dosen', type: 'dosen', photo: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=800&auto=format&fit=crop' },
 ];
 
 function TeamCard({ person }) {
   return (
     <div className="group rounded-2xl border border-white/10 bg-gradient-to-b from-white/10 to-white/[0.04] p-6 backdrop-blur-sm transition hover:translate-y-[-2px] hover:shadow-xl hover:shadow-violet-600/20">
-      <div className="h-14 w-14 rounded-xl bg-gradient-to-tr from-violet-600 to-indigo-500 text-white flex items-center justify-center text-lg font-bold shadow-lg shadow-violet-700/30">
-        {person.name.split(' ').map(w => w[0]).slice(0,2).join('')}
+      <div className="flex items-center gap-4">
+        <div className="h-16 w-16 overflow-hidden rounded-xl ring-1 ring-white/15">
+          <img src={person.photo} alt={person.name} className="h-full w-full object-cover" />
+        </div>
+        <div>
+          <h3 className="text-white font-semibold leading-tight">{person.name}</h3>
+          <p className="text-sm text-violet-200/70">{person.role}</p>
+          <span className="mt-2 inline-flex w-fit rounded-full border border-violet-400/20 bg-violet-500/10 px-2.5 py-1 text-xs text-violet-200">
+            {person.type === 'dosen' ? 'Dosen' : 'Staf'}
+          </span>
+        </div>
       </div>
-      <h3 className="mt-4 text-white font-semibold">{person.name}</h3>
-      <p className="text-sm text-violet-200/70">{person.role}</p>
-      <span className="mt-3 inline-flex w-fit rounded-full border border-violet-400/20 bg-violet-500/10 px-2.5 py-1 text-xs text-violet-200">
-        {person.type === 'dosen' ? 'Dosen' : 'Staf'}
-      </span>
     </div>
   );
 }
@@ -48,7 +52,7 @@ export default function TeamGrid() {
           </div>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {filtered.map((p, i) => (
             <TeamCard key={i} person={p} />
           ))}

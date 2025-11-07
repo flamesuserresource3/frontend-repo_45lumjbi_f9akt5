@@ -1,7 +1,7 @@
 import Hero3D from './components/Hero3D';
 import StatsOverview from './components/StatsOverview';
 import TeamGrid from './components/TeamGrid';
-import Footer from './components/Footer';
+import PodcastSection from './components/PodcastSection';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Hero3D />
       <StatsOverview />
       <TeamGrid />
-      <Footer />
+      <PodcastSection />
     </div>
   );
 }

@@ -1,14 +1,11 @@
 import { useState } from 'react';
 
 const sampleTeam = [
-  { name: 'Dr. A. Pratama', role: 'Ketua Prodi', type: 'dosen', photo: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=800&auto=format&fit=crop' },
-  { name: 'Dr. B. Wibowo', role: 'Dosen Tetap', type: 'dosen', photo: 'https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=800&auto=format&fit=crop' },
-  { name: 'C. Lestari, M.Sc', role: 'Dosen', type: 'dosen', photo: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop' },
-  { name: 'D. Siregar, M.Kom', role: 'Dosen', type: 'dosen', photo: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=800&auto=format&fit=crop' },
-  { name: 'E. Putri', role: 'Staf Akademik', type: 'staf', photo: 'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=800&auto=format&fit=crop' },
-  { name: 'F. Ramadhan', role: 'Staf Administrasi', type: 'staf', photo: 'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=800&auto=format&fit=crop' },
-  { name: 'G. Nugraha', role: 'Laboran', type: 'staf', photo: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=800&auto=format&fit=crop' },
-  { name: 'H. Santoso', role: 'Dosen', type: 'dosen', photo: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=800&auto=format&fit=crop' },
+  { name: 'Umi Mahmudah, M.Sc., Ph.D', role: 'Dosen', type: 'dosen', photo: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop' },
+  { name: 'Nalim, M.Si.', role: 'Dosen', type: 'dosen', photo: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=800&auto=format&fit=crop' },
+  { name: 'Wilda Yulia Rusyida, M.Sc', role: 'Dosen', type: 'dosen', photo: 'https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=800&auto=format&fit=crop' },
+  { name: 'Imam Prayogo Pujiono, M.Kom.', role: 'Dosen', type: 'dosen', photo: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=800&auto=format&fit=crop' },
+  { name: 'Abdul Majid, M.Kom', role: 'Dosen', type: 'dosen', photo: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=800&auto=format&fit=crop' },
 ];
 
 function TeamCard({ person }) {
@@ -42,13 +39,12 @@ export default function TeamGrid() {
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">Dosen & Staf</h2>
-            <p className="mt-2 text-violet-200/70">Data ringkas anggota Prodi Sains Data</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white">Dosen</h2>
+            <p className="mt-2 text-violet-200/70">Daftar nama dosen Prodi Sains Data</p>
           </div>
           <div className="flex items-center gap-2">
             <button onClick={() => setFilter('all')} className={`rounded-full px-4 py-2 text-sm transition border ${filter==='all' ? 'bg-white/10 text-white border-white/20' : 'bg-transparent text-violet-200/80 border-white/10 hover:bg-white/10'}`}>Semua</button>
             <button onClick={() => setFilter('dosen')} className={`rounded-full px-4 py-2 text-sm transition border ${filter==='dosen' ? 'bg-white/10 text-white border-white/20' : 'bg-transparent text-violet-200/80 border-white/10 hover:bg-white/10'}`}>Dosen</button>
-            <button onClick={() => setFilter('staf')} className={`rounded-full px-4 py-2 text-sm transition border ${filter==='staf' ? 'bg-white/10 text-white border-white/20' : 'bg-transparent text-violet-200/80 border-white/10 hover:bg-white/10'}`}>Staf</button>
           </div>
         </div>
 
